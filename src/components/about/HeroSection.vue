@@ -1,9 +1,9 @@
 <template>
   <section class="hero">
-    <img :src="resolvedImage" alt="소개 페이지 배너" />
+    <img src="@/assets/introductionbanner1.jpg" alt="소개 페이지 배너" />
     <div class="hero-text">
-      <h1>{{ title }}</h1>
-      <p>{{ subtitle }}</p>
+      <h1>헬스캐처 소개</h1>
+      <p>HEALTH CATCHER INTRODUCTION</p>
     </div>
   </section>
 </template>
@@ -11,26 +11,6 @@
 <script>
 export default {
   name: "HeroSection",
-  props: {
-    title: {
-      type: String,
-      default: "헬스캐처 소개",
-    },
-    subtitle: {
-      type: String,
-      default: "HEALTH CATCHER INTRODUCTION",
-    },
-    image: {
-      type: String,
-      default: "@/assets/introductionbanner1.jpg",
-    },
-  },
-  computed: {
-    resolvedImage() {
-      // 이미지 경로를 동적으로 해석
-      return this.image.includes('@/') ? require(`${this.image.replace('@/', './src/')}`) : this.image;
-    }
-  }
 };
 </script>
 

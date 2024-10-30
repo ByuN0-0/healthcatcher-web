@@ -1,10 +1,10 @@
 <template>
   <nav class="introduction-nav">
     <ul>
-      <li :class="{ active: activeTab === 'company' }" @click="showCompany">
+      <li :class="{ active: isCompanyIntroduction }" @click="$emit('show-company')">
         회사소개
       </li>
-      <li :class="{ active: activeTab === 'team' }" @click="showTeam">
+      <li :class="{ active: !isCompanyIntroduction }" @click="$emit('show-team')">
         운영진 소개
       </li>
     </ul>
@@ -15,17 +15,9 @@
 export default {
   name: "IntroductionNav",
   props: {
-    activeTab: {
-      type: String,
+    isCompanyIntroduction: {
+      type: Boolean,
       required: true,
-    },
-  },
-  methods: {
-    showCompany() {
-      this.$emit("changeTab", "company");
-    },
-    showTeam() {
-      this.$emit("changeTab", "team");
     },
   },
 };
