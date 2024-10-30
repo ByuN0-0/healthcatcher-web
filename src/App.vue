@@ -38,7 +38,19 @@ export default {
 </script>
 
 <style scoped>
-/* 네비게이션 바 */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#app {
+   font-family: 'GmarketSansMedium', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   margin: 0;
 }
@@ -46,15 +58,20 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  padding: 20px 40px; /* 좌우 패딩 증가 */
   color: white;
-  position: absolute; /* fixed 대신 absolute를 사용하여 상단에 고정하되 스크롤하지 않게 함 */
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100% - 80px); /* 패딩을 고려한 너비 계산 */
   z-index: 1000;
+  box-sizing: border-box; /* 패딩을 너비에 포함 */
 }
 
 .logo {
-  text-decoration: none; /* 링크일 때 밑줄 없애기 */
+  text-decoration: none;
   color: white;
 }
 
@@ -72,13 +89,16 @@ nav ul {
   list-style-type: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
-  visibility: visible; /* 요소가 표시되게 확인 */
+  visibility: visible;
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 nav ul li a:hover {

@@ -1,0 +1,17 @@
+/* src/main.css */
+
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+  /* 애플리케이션 전체에 폰트를 적용 */
+  body {
+    font-family: 'GmarketSansMedium', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
