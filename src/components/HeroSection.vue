@@ -2,19 +2,39 @@
   <section class="hero">
     <img src="@/assets/introductionbanner1.jpg" alt="소개 페이지 배너" />
     <div class="hero-text">
-      <h1>헬스캐처 소개</h1>
-      <p>HEALTH CATCHER INTRODUCTION</p>
+      <h1>{{ title }}</h1>
+      <p>{{ subtitle }}</p>
     </div>
+    <slot></slot>
   </section>
 </template>
 
 <script>
 export default {
   name: "HeroSection",
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+      default: "",
+    },
+    backgroundImage: {
+      type: String,
+      required: true,
+    },
+    imageAlt: {
+      type: String,
+      default: "배너 이미지",
+    },
+  },
 };
 </script>
 
 <style scoped>
+/* Hero Section */
 .hero {
   position: relative;
   height: 50vh;
