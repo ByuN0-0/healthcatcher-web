@@ -1,28 +1,16 @@
 <template>
   <div class="introduction-page">
-    <!-- HeroSection 컴포넌트 -->
     <HeroSection title="헬스캐처 소개" subtitle="HEALTH CATCHER INTRODUCTION">
-      <!-- 공통 네비게이션 컴포넌트 -->
       <NavBar
         activePage="about"
         :selectedMainMenu="'소개'"
-        subMenuTitle="회사 소개"
-        :subMenuItems="[
-          { label: '회사 소개', event: 'show-company-introduction' },
-          { label: '운영진 소개', event: 'show-team-introduction' },
-        ]"
-        @show-company-introduction="showCompanyIntroduction"
-        @show-team-introduction="showTeamIntroduction"
+        :subMenuTitle="currentSubMenuTitle"
+        :subMenuItems="subMenuItems"
+        @show-company-introduction="showSection('/about/company', '회사 소개')"
+        @show-team-introduction="showSection('/about/team', '운영진 소개')"
       />
     </HeroSection>
-
-    <!-- 회사소개와 운영진 소개를 컴포넌트로 분리하여 조건부 렌더링 -->
-    <div v-if="isCompanyIntroduction">
-      <CompanyIntroduction />
-    </div>
-    <div v-else>
-      <TeamIntroduction />
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -42,17 +30,34 @@ export default {
   },
   data() {
     return {
-      isCompanyIntroduction: true, // 기본값을 회사소개로 설정
+      currentSubMenuTitle: "회사 소개",
+      subMenuItems: [
+        { label: "회사 소개", route: "/about/company", event: "show-company-introduction" },
+        { label: "운영진 소개", route: "/about/team", event: "show-team-introduction" },
+      ],
     };
   },
   methods: {
-    showCompanyIntroduction() {
-      this.isCompanyIntroduction = true;
-    },
-    showTeamIntroduction() {
-      this.isCompanyIntroduction = false;
-    },
+    showSection(route, title) {
+      this.$router.push(route);
+      this.currentSubMenuTitle = title;
+    }
   },
+  created() {
+    // 초기 접근시 company로 리다이렉트
+    if (this.$route.path === '/about') {
+      this.showSection('/about/company', '회사 소개');
+    }
+  },
+  watch: {
+    '$route'(to) {
+      // 현재 라우트에 따라 subMenuTitle 업데이트
+      const menuItem = this.subMenuItems.find(item => item.route === to.path);
+      if (menuItem) {
+        this.currentSubMenuTitle = menuItem.label;
+      }
+    }
+  }
 };
 </script>
 

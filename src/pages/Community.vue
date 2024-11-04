@@ -1,19 +1,16 @@
 <template>
   <div class="community-page">
     <HeroSection title="헬스캐처 커뮤니티" subtitle="HEALTH CATCHER COMMUNITY">
-      <!-- 공통 네비게이션 컴포넌트 -->
       <NavBar
         activePage="community"
         :selectedMainMenu="'커뮤니티'"
         :subMenuTitle="currentSubMenuTitle"
         :subMenuItems="subMenuItems"
-        @show-community="showCommunity"
-        @show-communication-space="showCommunicationSpace"
+        @show-community="showSection('/community/news', '건강 소식')"
+        @show-communication-space="showSection('/community/communication', '소통 공간')"
       />
     </HeroSection>
-    <!-- 하위 섹션 컴포넌트 -->
-    <CommunityNews v-if="currentSubMenuTitle === '건강 소식'" />
-    <CommunicationSpace v-if="currentSubMenuTitle === '소통 공간'" />
+    <router-view></router-view>
   </div>
 </template>
 
@@ -33,27 +30,41 @@ export default {
   },
   data() {
     return {
-      isCommunity: true,
-      isCommunicationSpace: false,
       currentSubMenuTitle: "건강 소식",
       subMenuItems: [
-        { label: "건강 소식", event: "show-community" },
-        { label: "소통 공간", event: "show-communication-space" },
+        { 
+          label: "건강 소식", 
+          route: "/community/news", 
+          event: "show-community" 
+        },
+        { 
+          label: "소통 공간", 
+          route: "/community/communication", 
+          event: "show-communication-space" 
+        },
       ],
     };
   },
   methods: {
-    showCommunity() {
-      this.isCommunity = true;
-      this.isCommunicationSpace = false;
-      this.currentSubMenuTitle = "건강 소식";
-    },
-    showCommunicationSpace() {
-      this.isCommunity = false;
-      this.isCommunicationSpace = true;
-      this.currentSubMenuTitle = "소통 공간";
-    },
+    showSection(route, title) {
+      this.$router.push(route);
+      this.currentSubMenuTitle = title;
+    }
   },
+  created() {
+    // 초기 접근시 news로 리다이렉트
+    if (this.$route.path === '/community') {
+      this.showSection('/community/news', '건강 소식');
+    }
+  },
+  watch: {
+    '$route'(to) {
+      const menuItem = this.subMenuItems.find(item => item.route === to.path);
+      if (menuItem) {
+        this.currentSubMenuTitle = menuItem.label;
+      }
+    }
+  }
 };
 </script>
 

@@ -1,13 +1,24 @@
 <template>
-    <section class="hero">
-      <img src="../../assets/banner1.jpg" alt="메인 이미지" />
-      <div class="hero-text">
-        <h1>HEALTH <br />CATCHER</h1>
-        <p>좋은 꿈을 선물하는 드림캐처처럼, 더 건강한 내일을 선물하는 헬스캐처</p>
-        <button class="cta-button">자세히 보기 →</button>
-      </div>
-    </section>
-  </template>
+  <section class="hero">
+    <img src="../../assets/banner1.jpg" alt="메인 이미지" />
+    <div class="hero-text">
+      <h1>HEALTH <br />CATCHER</h1>
+      <p>좋은 꿈을 선물하는 드림캐처처럼, 더 건강한 내일을 선물하는 헬스캐처</p>
+      <button class="cta-button" @click="goToAbout">자세히 보기 →</button>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'HeroSection',
+  methods: {
+    goToAbout() {
+      this.$router.push('/about/company');
+    }
+  }
+}
+</script>
   
   <style scoped>
   .hero {

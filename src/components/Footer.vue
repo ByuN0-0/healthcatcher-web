@@ -27,30 +27,30 @@
       <div class="nav-group">
         <h2>소개</h2>
         <ul>
-          <li><router-link to="/about">회사소개</router-link></li>
-          <li><router-link to="/about">운영진소개</router-link></li>
+          <li><router-link to="/about/company">회사소개</router-link></li>
+          <li><router-link to="/about/team">운영진소개</router-link></li>
         </ul>
       </div>
       <div class="nav-group">
         <h2>사업</h2>
         <ul>
-          <li><router-link to="/business#health-app">건강어플리케이션</router-link></li>
-          <li><router-link to="/business#health-products">건강관리상품</router-link></li>
-          <li><router-link to="/business#health-fortune">건강사주</router-link></li>
+          <li><router-link to="/business/health-app">건강어플리케이션</router-link></li>
+          <li><router-link to="/business/health-products">건강관리상품</router-link></li>
+          <li><router-link to="/business/health-fortune">건강사주</router-link></li>
         </ul>
       </div>
       <div class="nav-group">
         <h2>커뮤니티</h2>
         <ul>
-          <li><router-link to="/community#health-news">건강소식</router-link></li>
-          <li><router-link to="/community#communication-space">소통공간</router-link></li>
+          <li><router-link to="/community/news">건강소식</router-link></li>
+          <li><router-link to="/community/communication">소통공간</router-link></li>
         </ul>
       </div>
       <div class="nav-group">
         <h2>문의</h2>
         <ul>
-          <li><router-link to="/contact#customer-qna">고객 QnA</router-link></li>
-          <li><router-link to="/contact#partnership-inquiry">파트너십 문의</router-link></li>
+          <li><router-link to="/contact/qna">고객 QnA</router-link></li>
+          <li><router-link to="/contact/partner">파트너십 문의</router-link></li>
         </ul>
       </div>
     </nav>

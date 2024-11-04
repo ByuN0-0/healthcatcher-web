@@ -1,20 +1,16 @@
 <template>
   <div class="contact-page">
     <HeroSection title="헬스캐처 문의" subtitle="HEALTH CATCHER CONTACT">
-
-    <!-- 네비게이션 바 -->
-    <NavBar
-      activePage="contact"
-      :selectedMainMenu="'문의'"
-      :subMenuTitle="currentSubMenuTitle"
-      :subMenuItems="subMenuItems"
-      @show-qna="showQnASection"
-      @show-partner="showPartnerSection"
-    />
+      <NavBar
+        activePage="contact"
+        :selectedMainMenu="'문의'"
+        :subMenuTitle="currentSubMenuTitle"
+        :subMenuItems="subMenuItems"
+        @show-qna="showSection('/contact/qna', '고객 Q&A')"
+        @show-partner="showSection('/contact/partner', '파트너십 문의')"
+      />
     </HeroSection>
-    <!-- Q&A 및 파트너 섹션 컴포넌트 -->
-    <QnASection v-if="isQnASection" />
-    <PartnerSection v-else />
+    <router-view></router-view>
   </div>
 </template>
 
@@ -34,24 +30,41 @@ export default {
   },
   data() {
     return {
-      isQnASection: true,
       currentSubMenuTitle: "고객 Q&A",
       subMenuItems: [
-        { label: "고객 Q&A", event: "show-qna" },
-        { label: "파트너십 문의", event: "show-partner" },
+        { 
+          label: "고객 Q&A", 
+          route: "/contact/qna", 
+          event: "show-qna" 
+        },
+        { 
+          label: "파트너십 문의", 
+          route: "/contact/partner", 
+          event: "show-partner" 
+        },
       ],
     };
   },
   methods: {
-    showQnASection() {
-      this.isQnASection = true;
-      this.currentSubMenuTitle = "고객 Q&A";
-    },
-    showPartnerSection() {
-      this.isQnASection = false;
-      this.currentSubMenuTitle = "파트너십 문의";
-    },
+    showSection(route, title) {
+      this.$router.push(route);
+      this.currentSubMenuTitle = title;
+    }
   },
+  created() {
+    // 초기 접근시 qna로 리다이렉트
+    if (this.$route.path === '/contact') {
+      this.showSection('/contact/qna', '고객 Q&A');
+    }
+  },
+  watch: {
+    '$route'(to) {
+      const menuItem = this.subMenuItems.find(item => item.route === to.path);
+      if (menuItem) {
+        this.currentSubMenuTitle = menuItem.label;
+      }
+    }
+  }
 };
 </script>
 

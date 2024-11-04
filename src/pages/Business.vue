@@ -1,18 +1,16 @@
 <template>
   <div class="business-page">
     <HeroSection title="헬스캐처 사업" subtitle="HEALTH CATCHER BUSINESS">
-      <!-- 공통 네비게이션 컴포넌트 -->
       <NavBar
         activePage="business"
         :selectedMainMenu="'사업'"
         :subMenuTitle="currentSubMenuTitle"
         :subMenuItems="subMenuItems"
-        @show-health-app="showHealthApp"
-        @show-health-products="showHealthProducts"
-        @show-health-fortune="showHealthFortune"
+        @show-health-app="showSection('/business/health-app', '건강 어플리케이션')"
+        @show-health-products="showSection('/business/health-products', '건강 관리 상품')"
+        @show-health-fortune="showSection('/business/health-fortune', '건강 사주')"
       />
     </HeroSection>
-    <!-- 하위 섹션 컴포넌트 -->
     <router-view></router-view>
   </div>
 </template>
@@ -37,35 +35,45 @@ export default {
     return {
       currentSubMenuTitle: "건강 어플리케이션",
       subMenuItems: [
-        { label: "건강 어플리케이션", route: "/business/health-app" },
-        { label: "건강 관리 상품", route: "/business/health-products" },
-        { label: "건강 사주", route: "/business/health-fortune" },
+        { 
+          label: "건강 어플리케이션", 
+          route: "/business/health-app", 
+          event: "show-health-app" 
+        },
+        { 
+          label: "건강 관리 상품", 
+          route: "/business/health-products", 
+          event: "show-health-products" 
+        },
+        { 
+          label: "건강 사주", 
+          route: "/business/health-fortune", 
+          event: "show-health-fortune" 
+        },
       ],
     };
   },
   methods: {
-    showHealthApp() {
-      this.isHealthApp = true;
-      this.isHealthProducts = false;
-      this.isHealthFortune = false;
-      this.currentSubMenuTitle = "건강 어플리케이션";
-    },
-    showHealthProducts() {
-      this.isHealthApp = false;
-      this.isHealthProducts = true;
-      this.isHealthFortune = false;
-      this.currentSubMenuTitle = "건강 관리 상품";
-    },
-    showHealthFortune() {
-      this.isHealthApp = false;
-      this.isHealthProducts = false;
-      this.isHealthFortune = true;
-      this.currentSubMenuTitle = "건강 사주";
-    },
-    changeSection(route) {
+    showSection(route, title) {
       this.$router.push(route);
-    },
+      this.currentSubMenuTitle = title;
+    }
   },
+  created() {
+    // 초기 접근시 health-app으로 리다이렉트
+    if (this.$route.path === '/business') {
+      this.showSection('/business/health-app', '건강 어플리케이션');
+    }
+  },
+  watch: {
+    '$route'(to) {
+      // 현재 라우트에 따라 subMenuTitle 업데이트
+      const menuItem = this.subMenuItems.find(item => item.route === to.path);
+      if (menuItem) {
+        this.currentSubMenuTitle = menuItem.label;
+      }
+    }
+  }
 };
 </script>
 

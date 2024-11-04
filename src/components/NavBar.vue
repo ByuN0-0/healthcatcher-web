@@ -35,13 +35,13 @@
         </button>
         <ul class="dropdown-menu" v-show="isSubDropdownOpen">
           <li v-for="(item, index) in subMenuItems" :key="index">
-            <a
-              href="#"
-              @click.prevent="selectSubMenuItem(item)"
-              :class="{ active: selectedSubMenu === item.label }"
+            <router-link
+              :to="item.route"
+              :class="{ active: $route.path === item.route }"
+              @click="selectSubMenuItem(item)"
             >
               {{ item.label }}
-            </a>
+            </router-link>
           </li>
         </ul>
       </li>
