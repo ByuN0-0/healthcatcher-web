@@ -6,7 +6,7 @@
         <h2>건강소식</h2>
         <p>헬스케어의 최신 트렌드와 정보를</p>
         <p>헬스캐처 커뮤니티에서 한눈에 확인하세요.</p>
-        <button class="news-button">소식 더보기 →</button>
+        <router-link to="/community/news" class="news-button">소식 더보기 →</router-link>
       </div>
       <div class="news-list">
         <ul>
@@ -57,6 +57,10 @@ export default {
     selectNews(index) {
       this.selectedNewsIndex = index;
     },
+    // 프로그래매틱 방식을 사용하고 싶다면 이 메서드를 사용
+    goToCommunity() {
+      this.$router.push('/community/news');
+    }
   },
 };
 </script>
@@ -117,6 +121,7 @@ export default {
   cursor: pointer;
   background-color: white;
   transition: background-color 0.3s, color 0.3s;
+  text-decoration: none; /* router-link 밑줄 제거 */
 }
 
 .news-button:hover {

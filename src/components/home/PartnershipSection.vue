@@ -1,16 +1,29 @@
 <template>
-    <section class="partnership">
-      <div class="partnership-content">
-        <h2 class="partnership-title">PARTNERSHIP</h2>
-        <h3 class="partnership-heading">파트너십 문의</h3>
-        <p class="partnership-description">
-          헬스캐처는 지속 가능한 성장을 위해 다양한 기업과 협력 기회를 열어두고 있습니다.<br />
-          광고, 협력, 후원 및 투자와 관련된 모든 문의를 환영하며, 함께 헬스케어의 미래를 혁신할 파트너를 기다리고 있습니다.
-        </p>
-        <button class="partnership-button">소식 더보기 →</button>
-      </div>
-    </section>
-  </template>
+  <section class="partnership">
+    <div class="partnership-content">
+      <h2 class="partnership-title">PARTNERSHIP</h2>
+      <h3 class="partnership-heading">파트너십 문의</h3>
+      <p class="partnership-description">
+        헬스캐처는 지속 가능한 성장을 위해 다양한 기업과 협력 기회를 열어두고 있습니다.<br />
+        광고, 협력, 후원 및 투자와 관련된 모든 문의를 환영하며, 함께 헬스케어의 미래를 혁신할 파트너를 기다리고 있습니다.
+      </p>
+      <router-link to="/contact/partner" class="partnership-button">
+        문의하기 →
+      </router-link>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'PartnershipSection',
+  methods: {
+    goToContact() {
+      this.$router.push('/contact/partner');
+    }
+  }
+}
+</script>
   
   <style scoped>
   .partnership {
@@ -69,6 +82,7 @@
     cursor: pointer;
     font-size: 1.2rem;
     transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
   }
   
   .partnership-button:hover {
