@@ -1,22 +1,17 @@
 <template>
   <section class="services">
-    <div
-      class="service-item"
-      v-for="(service, index) in services"
-      :key="index"
-    >
+    <div class="service-item" v-for="(service, index) in services" :key="index">
       <img :src="service.image" :alt="service.alt" class="service-image" />
       <div class="service-overlay">
         <h3 class="service-title">{{ service.title }}</h3>
         <p class="service-description">{{ service.description }}</p>
-        <button class="more-info">자세히 보기 →</button>
+        <button class="more-info" @click="navigateToSection(service.route)">자세히 보기 →</button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-// 이미지 파일을 미리 import합니다.
 import healthApplicationBanner from '@/assets/healthapplicationbanner.jpg';
 import healthCareProductsBanner from '@/assets/healthcareproductsbanner.jpg';
 import healthAdviceBanner from '@/assets/healthadvicebanner.jpg';
@@ -30,24 +25,30 @@ export default {
           image: healthApplicationBanner,
           alt: '건강 어플리케이션 이미지',
           title: '건강 어플리케이션',
-          description:
-            '언제 어디서나 헬스캐처의 맞춤형 건강 관리 플랫폼으로 당신의 건강을 스마트하게 관리하세요.',
+          description: '언제 어디서나 헬스캐처의 맞춤형 건강 관리 플랫폼으로 당신의 건강을 스마트하게 관리하세요.',
+          route: '/business/health-app',
         },
         {
           image: healthCareProductsBanner,
           alt: '건강 관리 상품 이미지',
           title: '건강 관리 상품',
-          description:
-            '엄선된 품질과 검증된 효과! 헬스캐처가 추천하는 건강 관리 상품으로 당신의 삶의 질을 높이세요.',
+          description: '엄선된 품질과 검증된 효과! 헬스캐처가 추천하는 건강 관리 상품으로 당신의 삶의 질을 높이세요.',
+          route: '/business/health-products',
         },
         {
           image: healthAdviceBanner,
           alt: '건강 사주 이미지',
           title: '건강 사주',
           description: '사주로 알아보는 건강, 전통과 과학의 조화를 경험하세요.',
+          route: '/business/health-fortune',
         },
       ],
     };
+  },
+  methods: {
+    navigateToSection(route) {
+      this.$router.push(route);
+    },
   },
 };
 </script>

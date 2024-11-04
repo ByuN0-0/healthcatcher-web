@@ -13,9 +13,7 @@
       />
     </HeroSection>
     <!-- 하위 섹션 컴포넌트 -->
-    <HealthApp v-if="isHealthApp" />
-    <HealthProducts v-if="isHealthProducts" />
-    <HealthFortune v-if="isHealthFortune" />
+    <router-view></router-view>
   </div>
 </template>
 
@@ -37,14 +35,11 @@ export default {
   },
   data() {
     return {
-      isHealthApp: true,
-      isHealthProducts: false,
-      isHealthFortune: false,
       currentSubMenuTitle: "건강 어플리케이션",
       subMenuItems: [
-        { label: "건강 어플리케이션", event: "show-health-app" },
-        { label: "건강 관리 상품", event: "show-health-products" },
-        { label: "건강 사주", event: "show-health-fortune" },
+        { label: "건강 어플리케이션", route: "/business/health-app" },
+        { label: "건강 관리 상품", route: "/business/health-products" },
+        { label: "건강 사주", route: "/business/health-fortune" },
       ],
     };
   },
@@ -66,6 +61,9 @@ export default {
       this.isHealthProducts = false;
       this.isHealthFortune = true;
       this.currentSubMenuTitle = "건강 사주";
+    },
+    changeSection(route) {
+      this.$router.push(route);
     },
   },
 };

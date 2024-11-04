@@ -8,15 +8,15 @@
         <div class="info-details">
           <p>
             <span class="label">대표전화</span>
-            <span class="value">02-0000-0000</span>
+            <span class="value">010-4337-4799</span>
             <span class="label ml-20">메일</span>
-            <span class="value">healthcatcher@healthcatcher.co.kr</span>
+            <span class="value">jhlee@healthcatcher.net</span>
             <span class="label ml-20">사업자등록번호</span>
             <span class="value">360-86-03316</span>
           </p>
           <p class="address">
             <span class="label">본사</span>
-            <span class="value">서울특별시 성동구 서울숲 124, 16층 16183호(성동동, 위워크)</span>
+            <span class="value">성북구 서경로 124, 16층 1618호 (정릉동, 유담관)</span>
           </p>
         </div>
       </div>
