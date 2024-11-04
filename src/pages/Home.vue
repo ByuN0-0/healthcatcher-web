@@ -6,6 +6,7 @@
     <ServicesSection />
     <NewsSection />
     <PartnershipSection />
+    <notice-modal />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import LogoSection from '@/components/home/LogoSection.vue'
 import ServicesSection from '@/components/home/ServicesSection.vue'
 import NewsSection from '@/components/home/NewsSection.vue'
 import PartnershipSection from '@/components/home/PartnershipSection.vue'
+import NoticeModal from '@/components/modal/NoticeModal.vue'
 
 export default {
   name: 'HomePage',
@@ -23,7 +25,8 @@ export default {
     LogoSection,
     ServicesSection,
     NewsSection,
-    PartnershipSection
+    PartnershipSection,
+    NoticeModal
   }
 }
 </script>
