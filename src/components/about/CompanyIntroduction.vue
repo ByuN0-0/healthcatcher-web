@@ -96,6 +96,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .intro-image-wrapper {
@@ -114,12 +115,14 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .image-container {
   flex: 1;
   max-width: 50%; /* 이미지 최대 너비 제한 */
   margin-right: 40px;
+  width: 100%;
 }
 
 .text-content {
@@ -227,5 +230,91 @@ export default {
   color: #999;
   margin-top: 80px;
   line-height: 1.6;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .image-container {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .intro-image-wrapper {
+    width: 100%;
+    padding-top: 75%; /* 4:3 비율로 변경 */
+    border-radius: 0 80px 80px 0;
+    max-height: none; /* max-height 제한 제거 */
+  }
+
+  .text-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .highlight-text {
+    font-size: 22px;
+  }
+
+  .highlight-background h1 {
+    font-size: 36px;
+  }
+
+  .highlight-background p {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+
+  .bottom-section h2 {
+    font-size: 28px;
+    padding: 0 20px;
+  }
+
+  .icons-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .icon-item img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .caution-text {
+    padding: 0 20px;
+  }
+
+  .intro-image {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+  }
+}
+
+/* 더 작은 모바일 화면을 위한 추가 조정 */
+@media screen and (max-width: 480px) {
+  .highlight-text {
+    font-size: 18px;
+  }
+
+  .highlight-background h1 {
+    font-size: 28px;
+  }
+
+  .icon-item img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .intro-image-wrapper {
+    padding-top: 100%; /* 1:1 비율로 변경 */
+    border-radius: 0 40px 40px 0; /* 더 작은 곡률 */
+  }
 }
 </style>

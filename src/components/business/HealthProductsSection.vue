@@ -91,18 +91,19 @@
   }
   
   .image-container {
-  width: 500px; /* 원하는 고정 너비 */
-  height: 370px; /* 원하는 고정 높이 */
-  overflow: hidden; /* 이미지를 박스 크기에 맞춰 잘림 */
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 비율 유지하며 박스에 맞춰 조정 */
-  border-radius: 12px;
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
-}
+    width: 100%;
+    max-width: 500px;
+    height: 370px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
   
   .main-text {
     flex: 1;
@@ -168,55 +169,39 @@
   }
   
   @media (max-width: 768px) {
-    .health-products .main-visual {
-      margin-bottom: 60px;
+    .health-products {
+      padding: 40px 20px;
     }
   
-    .health-products .feature-blocks {
-      display: grid;
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+  
+    .image-container {
+      height: 250px;
+    }
+  
+    .main-visual {
       gap: 30px;
+      margin-bottom: 40px;
     }
   
-    .health-products .feature-block {
-      background: transparent;
-      padding: 0;
-      transform: none;
+    .main-text h3 {
+      font-size: 1.5rem;
     }
   
-    .health-products .feature-block:hover {
-      transform: none;
+    .main-description {
+      font-size: 1rem;
     }
   
-    .health-products .feature-block p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #666;
-      margin-bottom: 0;
+    .feature-block {
+      padding: 25px;
+      background: #f8f9fa;
     }
   
-    .health-products .main-text h3 {
-      font-size: 1.8rem;
-      line-height: 1.5;
-      margin-bottom: 2rem;
-    }
-  
-    .health-products .category {
-      margin-bottom: 1.5rem;
-      color: #666;
-    }
-  
-    .health-products .highlight {
-      color: #00a0e9;
-      font-weight: bold;
-    }
-  
-    .health-products .main-visual {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .health-products .feature-block {
-      padding: 20px 0;
+    .feature-block p {
+      font-size: 1rem;
     }
   }
   </style>

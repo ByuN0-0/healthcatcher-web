@@ -172,17 +172,54 @@
 
 /* 반응형 스타일 */
 @media (max-width: 968px) {
+  .business-content {
+    padding: 40px 16px;  /* 패딩 축소 */
+  }
+
   .main-visual {
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
+  }
+
+  .image-container {
+    width: 100%;  /* 전체 너비로 변경 */
+    height: 300px;  /* 모바일에서 적절한 높이로 조정 */
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
   }
 
   .main-text {
     text-align: center;
+  }
+
+  .main-text h3 {
+    font-size: 1.5rem;  /* 모바일에서 글자 크기 축소 */
+  }
+
+  .main-description {
+    font-size: 1rem;  /* 모바일에서 글자 크기 축소 */
+  }
+
+  .feature-block {
+    padding: 25px;  /* 패딩 축소 */
+  }
+
+  .feature-block h4 {
+    font-size: 1.2rem;  /* 모바일에서 글자 크기 축소 */
+  }
+
+  .feature-block p {
+    font-size: 1rem;  /* 모바일에서 글자 크기 축소 */
+  }
+}
+
+/* 더 작은 모바일 화면용 스타일 추가 */
+@media (max-width: 480px) {
+  .image-container {
+    height: 250px;  /* 더 작은 화면에서 높이 추가 축소 */
   }
 }
 </style>

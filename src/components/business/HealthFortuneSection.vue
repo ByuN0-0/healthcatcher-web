@@ -92,17 +92,16 @@ export default {
 }
 
 .image-container {
-  width: 500px; /* 원하는 고정 너비 */
-  height: 370px; /* 원하는 고정 높이 */
-  overflow: hidden; /* 이미지를 박스 크기에 맞춰 잘림 */
+  width: 500px;
+  height: 370px;
+  overflow: hidden;
 }
 
 .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 비율 유지하며 박스에 맞춰 조정 */
+  object-fit: cover;
   border-radius: 12px;
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 }
 
 .main-text {
@@ -163,8 +162,40 @@ export default {
     gap: 40px;
   }
 
+  .image-container {
+    width: 100%;
+    height: 300px;
+  }
+
   .main-text {
     text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .main-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .feature-block {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .health-fortune {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .image-container {
+    height: 250px;
   }
 }
 </style>

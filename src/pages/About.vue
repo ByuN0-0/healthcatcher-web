@@ -61,4 +61,32 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* 모바일 디바이스를 위한 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  /* 컨테이너 너비 조정 */
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* 폰트 사이즈 조정 */
+  body {
+    font-size: 16px;
+  }
+  
+  /* 이미지 반응형 처리 */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* 더 작은 모바일 화면을 위한 추가 설정 */
+@media screen and (max-width: 480px) {
+  /* 더 작은 화면에서의 추가적인 스타일 조정 */
+  .container {
+    padding: 0 10px;
+  }
+}
+</style>

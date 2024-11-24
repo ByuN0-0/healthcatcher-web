@@ -29,21 +29,39 @@ export default {
   max-width: 1200px;
   margin: 60px auto;
   text-align: center;
+  padding: 0 20px;
 }
 .button-group {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin: 30px 0;
+  flex-wrap: wrap;
 }
 .info-button {
   padding: 10px 30px;
   border: none;
   background-color: #f5f5f5;
   cursor: pointer;
+  min-width: 120px;
 }
 .info-button.active {
   background-color: #00a0e9;
   color: white;
+}
+@media screen and (max-width: 768px) {
+  .content-section {
+    margin: 30px auto;
+  }
+  .content-description {
+    font-size: 0.9em;
+  }
+  .button-group {
+    gap: 10px;
+  }
+  .info-button {
+    padding: 8px 20px;
+    font-size: 0.9em;
+  }
 }
 </style>

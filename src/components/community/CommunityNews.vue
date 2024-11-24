@@ -25,6 +25,7 @@ export default {
   max-width: 1200px;
   margin: 60px auto;
   text-align: center;
+  padding: 0 20px;
 }
 .content-description {
   margin-bottom: 40px;
@@ -32,5 +33,24 @@ export default {
 .sub-text {
   font-size: 14px;
   color: #666;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .content-section {
+    margin: 30px auto;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .content-description {
+    margin-bottom: 30px;
+  }
+  
+  .sub-text {
+    font-size: 13px;
+  }
 }
 </style>

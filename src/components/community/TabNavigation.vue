@@ -37,17 +37,30 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    padding: 15px 0;
+    padding: 10px 0;
   }
   .tab-item {
-    padding: 10px 20px;
+    padding: 8px 16px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #000;
     border-bottom: 2px solid transparent;
   }
   .tab-item.active {
     border-bottom: 2px solid #00a0e9;
+  }
+  /* 모바일 반응형 스타일 추가 */
+  @media screen and (max-width: 768px) {
+    .tab-navigation {
+      padding: 10px 0;
+    }
+    .tab-container {
+      padding: 5px 0;
+    }
+    .tab-item {
+      padding: 6px 12px;
+      font-size: 1rem;
+    }
   }
   </style>
   

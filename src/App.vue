@@ -1,27 +1,32 @@
 <template>
   <div id="app">
-    <!-- 네비게이션 바 -->
-    <header class="navbar">
+    <header class="navbar" :class="{ 'scrolled': isScrolled }">
       <div class="logo">
         <router-link to="/" class="logo">
           <h1>헬스캐처</h1>
           <span>Health Catcher</span>
         </router-link>
       </div>
-      <nav>
+      
+      <button class="menu-btn" @click="toggleMenu">
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav :class="{ 'active': isMenuOpen }">
         <ul>
-          <li><router-link to="/about">소개</router-link></li>
-          <li><router-link to="/business">사업</router-link></li>
-          <li><router-link to="/community">커뮤니티</router-link></li>
-          <li><router-link to="/contact">문의</router-link></li>
+          <li><router-link to="/about" @click="closeMenu">소개</router-link></li>
+          <li><router-link to="/business" @click="closeMenu">사업</router-link></li>
+          <li><router-link to="/community" @click="closeMenu">커뮤니티</router-link></li>
+          <li><router-link to="/contact" @click="closeMenu">문의</router-link></li>
         </ul>
       </nav>
     </header>
 
-    <!-- 페이지 내용 -->
     <router-view />
-
-    <!-- 푸터 추가 -->
     <Footer />
   </div>
 </template>
@@ -34,6 +39,29 @@ export default {
   components: {
     Footer,
   },
+  data() {
+    return {
+      isMenuOpen: false,
+      isScrolled: false
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
+    },
+    closeMenu() {
+      this.isMenuOpen = false
+    },
+    handleScroll() {
+      this.isScrolled = window.scrollY > 50
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 };
 </script>
 
@@ -59,15 +87,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px; /* 좌우 패딩 증가 */
+  padding: 20px 40px;
   color: white;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  width: calc(100% - 80px); /* 패딩을 고려한 너비 계산 */
   z-index: 1000;
-  box-sizing: border-box; /* 패딩을 너비에 포함 */
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
 }
 
 .logo {
@@ -106,4 +135,155 @@ nav ul li a:hover {
 }
 
 /* 푸터 스타일은 별도로 Footer.vue에서 관리 */
+
+/* 모바일 기기 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* 폰트 크기 조정 */
+  h1 { font-size: 24px; }
+  p { font-size: 16px; }
+  
+  /* 네비게이션 메뉴 조정 */
+  .nav-menu {
+    flex-direction: column;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    transition: 0.3s;
+    padding-top: 60px;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo span {
+    font-size: 0.8rem;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button, 
+.nav-link {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto; /* 오른쪽 정렬을 위해 추가 */
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* 모바일 스타일 */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.85); /* 스크롤 시에만 배경색 적용 */
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 1001;
+    position: relative; /* 위치 조정을 위해 추가 */
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    transition: 0.3s;
+    padding-top: 60px;
+    backdrop-filter: blur(10px);
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo span {
+    font-size: 0.8rem;
+  }
+}
 </style>

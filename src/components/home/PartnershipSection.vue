@@ -29,6 +29,7 @@ export default {
   .partnership {
     position: relative;
     height: 60vh;
+    min-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,6 +72,8 @@ export default {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 30px;
+    word-break: keep-all;
+    white-space: pre-line;
   }
   
   .partnership-button {
@@ -88,5 +91,36 @@ export default {
   .partnership-button:hover {
     background-color: white;
     color: black;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .partnership {
+      height: auto;
+      padding: 60px 20px;
+    }
+
+    .partnership-content {
+      padding: 20px;
+    }
+
+    .partnership-title {
+      font-size: 1.2rem;
+    }
+
+    .partnership-heading {
+      font-size: 2rem;
+    }
+
+    .partnership-description {
+      font-size: 1rem;
+      padding: 0 20px;
+      word-break: keep-all;
+      line-height: 1.8;
+    }
+
+    .partnership-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
   }
   </style>

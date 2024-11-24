@@ -77,18 +77,24 @@ export default {
 
 <style scoped>
 .qna-section {
-  padding: 40px;
+  padding: 20px;
   text-align: center;
+}
+
+.qna-content {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .qna-list table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
 .qna-list th,
 .qna-list td {
-  padding: 10px;
+  padding: 8px;
   border-bottom: 1px solid #ddd;
   text-align: center;
 }
@@ -113,5 +119,22 @@ export default {
   background-color: #00a0e9;
   color: white;
   border-color: #00a0e9;
+}
+
+@media screen and (max-width: 768px) {
+  .qna-section {
+    padding: 10px;
+  }
+  
+  .qna-list th,
+  .qna-list td {
+    font-size: 14px;
+  }
+
+  .pagination span {
+    padding: 4px 8px;
+    margin: 0 2px;
+    font-size: 14px;
+  }
 }
 </style>

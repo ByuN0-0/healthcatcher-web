@@ -98,6 +98,62 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
+/* 모바일 반응형 스타일 추가 */
+@media screen and (max-width: 768px) {
+  .posts-table {
+    padding: 0 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 10px 5px;
+  }
+
+  /* 번호와 날짜 컬럼 크기 조절 */
+  th:first-child,
+  td:first-child,
+  th:last-child,
+  td:last-child {
+    width: 60px;
+  }
+
+  /* 글쓴이 컬럼 크기 조절 */
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 70px;
+  }
+}
+
+/* 매우 작은 화면에서의 추가 조정 */
+@media screen and (max-width: 480px) {
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 8px 3px;
+  }
+
+  /* 번호와 날짜 컬럼 더 작게 */
+  th:first-child,
+  td:first-child,
+  th:last-child,
+  td:last-child {
+    width: 50px;
+  }
+
+  /* 글쓴이 컬럼 더 작게 */
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 60px;
+  }
+}
+
 .pagination {
   margin-top: 20px;
   text-align: center;

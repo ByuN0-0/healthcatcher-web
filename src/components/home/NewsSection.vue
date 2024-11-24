@@ -175,4 +175,54 @@ export default {
   color: #666;
   line-height: 1.7;
 }
+
+@media screen and (max-width: 768px) {
+  .news-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .news-header {
+    text-align: center;
+  }
+
+  .news-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .news-header p {
+    font-size: 16px;
+  }
+
+  .news-button {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .news-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+
+  .news-date {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .news-content {
+    padding-left: 0;
+  }
+
+  .news-title {
+    font-size: 1.1rem;
+  }
+
+  .news-description {
+    font-size: 1rem;
+  }
+}
 </style>

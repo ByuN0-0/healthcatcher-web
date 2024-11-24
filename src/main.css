@@ -15,3 +15,157 @@
     box-sizing: border-box;
   }
   
+  /* 기존 스타일에 추가 */
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* 모바일 기본 폰트 사이즈 조정 */
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px 15px;
+    }
+    
+    .logo h1 {
+      font-size: 1.5rem;
+    }
+    
+    .logo span {
+      font-size: 0.8rem;
+    }
+    
+    nav ul {
+      gap: 15px;
+    }
+    
+    nav ul li a {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav ul {
+      display: none; /* 모바일에서는 햄버거 메뉴로 대체 */
+    }
+  }
+  
+  /* 공통 섹션 스타일 */
+  .section-content {
+    padding: 40px 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .section-content {
+      padding: 30px 15px;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .main-visual {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .image-container {
+      width: 100%;
+      height: 250px;
+    }
+    
+    .main-text h3 {
+      font-size: 1.5rem;
+    }
+    
+    .main-description {
+      font-size: 1rem;
+    }
+    
+    .feature-block {
+      padding: 25px;
+    }
+    
+    .feature-block h4 {
+      font-size: 1.2rem;
+    }
+    
+    .feature-block p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 95%;
+      margin: 10px;
+      max-height: 90vh;
+    }
+    
+    .modal-header h2 {
+      font-size: 1.2rem;
+    }
+    
+    .modal-body {
+      padding: 15px;
+    }
+    
+    .modal-footer {
+      padding: 10px 15px;
+    }
+  }
+  
+  /* 터치 디바이스를 위한 최적화 */
+  @media (hover: none) {
+    .feature-block:hover {
+      transform: none;
+    }
+    
+    .nav-button:active,
+    .cta-button:active {
+      opacity: 0.7;
+    }
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 1200px;
+      padding: 0 24px;
+    }
+  }
+  
+  /* 데스크톱 기본 설정 추가 */
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+  
+  /* 부드러운 스크롤 효과 */
+  html {
+    scroll-behavior: smooth;
+  }
+  

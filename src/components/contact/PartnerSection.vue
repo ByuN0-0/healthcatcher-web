@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .partner-section {
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
 }
 .icons-section {
@@ -49,5 +49,23 @@ export default {
   font-size: 1.1rem;
   color: #555;
   line-height: 1.6;
+}
+.athlete-image {
+  max-width: 100%;
+  margin: 20px 0;
+}
+.partner-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media screen and (max-width: 768px) {
+  .partner-section {
+    padding: 20px 15px;
+  }
+  .partner-details {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
 }
 </style>

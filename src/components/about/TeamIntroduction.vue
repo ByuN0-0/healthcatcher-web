@@ -55,6 +55,7 @@ export default {
   align-items: center;
   margin: 40px auto;
   max-width: 1200px;
+  padding: 0 20px; /* 모바일에서 좌우 여백 추가 */
 }
 
 .team-image img {
@@ -66,6 +67,7 @@ export default {
 .team-introduction .team-content {
   margin-top: 20px;
   text-align: center;
+  padding: 0 20px; /* 모바일에서 텍스트 좌우 여백 추가 */
 }
 
 .team-content p {
@@ -77,5 +79,21 @@ export default {
 .team-content .highlight {
   color: #00a0e9;
   font-weight: bold;
+}
+
+/* 모바일 반응형 스타일 추가 */
+@media screen and (max-width: 768px) {
+  .team-content p {
+    font-size: 16px; /* 모바일에서 폰트 사이즈 축소 */
+  }
+
+  .title-container {
+    margin-top: 40px; /* 모바일에서 상단 여백 축소 */
+    margin-bottom: 30px;
+  }
+
+  .team-image {
+    margin: 30px auto; /* 모바일에서 상하 여백 축소 */
+  }
 }
 </style>

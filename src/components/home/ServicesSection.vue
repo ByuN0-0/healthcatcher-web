@@ -73,7 +73,9 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
+  max-height: 600px;
 }
 
 .service-item:hover .service-image {
@@ -131,5 +133,36 @@ export default {
 .more-info:hover {
   background-color: white;
   color: black;
+}
+
+/* 모바일 반응형 스타일 추가 */
+@media screen and (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
+  .service-item {
+    height: 300px; /* 모바일에서의 높이 고정 */
+    margin-bottom: 20px; /* 아이템 간 간격 */
+  }
+
+  .service-title {
+    font-size: 1.5rem; /* 모바일에서 글자 크기 축소 */
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .more-info {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .service-image {
+    max-height: 300px;
+  }
 }
 </style>
