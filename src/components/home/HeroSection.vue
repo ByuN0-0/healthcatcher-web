@@ -66,7 +66,7 @@ export default {
 }
 
 .hero-text p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top: 20px;
 }
 
