@@ -15,7 +15,7 @@ import QnASection from '@/components/contact/QnASection.vue'
 import PartnerSection from '@/components/contact/PartnerSection.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -111,7 +111,10 @@ const router = createRouter({
         }
       ]
     }
-  ]
+  ],
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router
