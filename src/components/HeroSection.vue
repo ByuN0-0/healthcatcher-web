@@ -60,7 +60,7 @@ export default {
 }
 
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 

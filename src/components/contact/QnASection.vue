@@ -125,16 +125,55 @@ export default {
   .qna-section {
     padding: 10px;
   }
-  
-  .qna-list th,
-  .qna-list td {
+
+  .qna-list table {
     font-size: 14px;
   }
 
-  .pagination span {
-    padding: 4px 8px;
-    margin: 0 2px;
-    font-size: 14px;
+  .qna-list th,
+  .qna-list td {
+    padding: 10px 5px;
+  }
+
+  /* 번호와 날짜 컬럼 크기 조절 */
+  .qna-list th:first-child,
+  .qna-list td:first-child,
+  .qna-list th:last-child,
+  .qna-list td:last-child {
+    width: 60px;
+  }
+
+  /* 글쓴이 컬럼 크기 조절 */
+  .qna-list th:nth-child(3),
+  .qna-list td:nth-child(3) {
+    width: 70px;
+  }
+}
+
+/* 매우 작은 화면에서의 추가 조정 */
+@media screen and (max-width: 480px) {
+  .qna-list table {
+    font-size: 12px;
+    min-width: auto; /* min-width 제거하여 모바일에서 더 작게 표시 */
+  }
+
+  .qna-list th,
+  .qna-list td {
+    padding: 8px 3px;
+  }
+
+  /* 번호와 날짜 컬럼 더 작게 */
+  .qna-list th:first-child,
+  .qna-list td:first-child,
+  .qna-list th:last-child,
+  .qna-list td:last-child {
+    width: 50px;
+  }
+
+  /* 글쓴이 컬럼 더 작게 */
+  .qna-list th:nth-child(3),
+  .qna-list td:nth-child(3) {
+    width: 60px;
   }
 }
 </style>
