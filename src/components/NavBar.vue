@@ -284,7 +284,7 @@ export default {
 
   .dropdown-menu a {
     padding: 8px 16px;
-    font-size: 13px;
+    font-size: 1px;
     height: 36px;
   }
 }

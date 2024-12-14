@@ -2,7 +2,7 @@
   <!-- 운영진 소개 내용 -->
   <section class="team-introduction">
     <div class="title-container">
-      <h2>운영진 소개</h2>
+      <h2 class="section-title">운영진 소개</h2>
     </div>
     <div class="team-image">
       <img src="@/assets/member.jpg" alt="운영진 이미지" />
@@ -72,13 +72,13 @@ export default {
 
 .team-content p {
   font-size: 18px;
-  color: #333;
+  color: #666;
   line-height: 1.6;
 }
 
 .team-content .highlight {
   color: #00a0e9;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 /* 모바일 반응형 스타일 추가 */
@@ -95,5 +95,13 @@ export default {
   .team-image {
     margin: 30px auto; /* 모바일에서 상하 여백 축소 */
   }
+}
+
+/* 추가된 section-title 스타일 */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px;
 }
 </style>

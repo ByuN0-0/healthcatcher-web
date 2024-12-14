@@ -1,23 +1,18 @@
 <template>
   <!-- 회사소개 내용 -->
-  <section
-    class="company-introduction"
-    id="company-introduction"
-  >
+  <section class="company-introduction" id="company-introduction">
     <div class="title-container">
-      <h2>회사 소개</h2>
+      <h2 class="section-title">회사 소개</h2>
     </div>
     <div class="intro-content">
-      <div class="image-container">
-        <div class="intro-image-wrapper">
-          <img
-            src="@/assets/introductionimage1.jpg"
-            alt="회사소개 이미지"
-            class="intro-image"
-          />
+      <div class="video-container">
+        <!-- image-container를 video-container로 변경 -->
+        <div class="video-wrapper">
+          <video class="intro-video" autoplay loop muted playsinline controls>
+            <source src="@/assets/헬스캐처_Final_MP4.mp4" type="video/mp4" />
+            귀하의 브라우저는 비디오 태그를 지원하지 않습니다.
+          </video>
         </div>
-      </div>
-      <div class="text-content">
         <p class="highlight-text">
           드림캐처가 좋은 꿈을 <span class="highlight">선물</span>하듯,<br />
           헬스캐처는
@@ -99,30 +94,26 @@ export default {
   width: 100%;
 }
 
-.intro-image-wrapper {
+.video-container {
   width: 100%;
-  padding-top: 56.25%; /* 16:9 비율 */
+  max-width: 1200px; /* 컨테이너 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+.video-wrapper {
+  width: 100%;
   position: relative;
-  border-radius: 0 150px 150px 0;
   overflow: hidden;
-  max-height: 400px; /* 높이 제한 추가 */
+  margin-bottom: 30px;
+  max-width: 800px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
 }
 
-.intro-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+.intro-video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
-}
-
-.image-container {
-  flex: 1;
-  max-width: 50%; /* 이미지 최대 너비 제한 */
-  margin-right: 40px;
-  width: 100%;
+  object-fit: contain; /* cover에서 contain으로 변경 */
+  max-height: 450px; /* 최대 높이 설정 */
 }
 
 .text-content {
@@ -134,8 +125,10 @@ export default {
   font-size: 28px;
   font-weight: bold;
   color: #333;
+  margin-top: 40px;
   margin-bottom: 30px;
   line-height: 1.4;
+  text-align: center;
 }
 
 .text-content p {
@@ -239,18 +232,8 @@ export default {
     padding: 0 20px;
   }
 
-  .image-container {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 40px;
-    width: 100%;
-  }
-
-  .intro-image-wrapper {
-    width: 100%;
-    padding-top: 75%; /* 4:3 비율로 변경 */
-    border-radius: 0 80px 80px 0;
-    max-height: none; /* max-height 제한 제거 */
+  .intro-video {
+    max-height: 350px;
   }
 
   .text-content {
@@ -289,12 +272,6 @@ export default {
   .caution-text {
     padding: 0 20px;
   }
-
-  .intro-image {
-    width: 100%;
-    height: 100%;
-    object-position: center;
-  }
 }
 
 /* 더 작은 모바일 화면을 위한 추가 조정 */
@@ -312,9 +289,16 @@ export default {
     height: 150px;
   }
 
-  .intro-image-wrapper {
-    padding-top: 100%; /* 1:1 비율로 변경 */
-    border-radius: 0 40px 40px 0; /* 더 작은 곡률 */
+  .intro-video {
+    max-height: 250px;
   }
+}
+
+/* 추가된 section-title 스타일 */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px;
 }
 </style>
