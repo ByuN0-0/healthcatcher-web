@@ -9,7 +9,7 @@
         <!-- image-container를 video-container로 변경 -->
         <div class="video-wrapper">
           <video class="intro-video" autoplay loop muted playsinline controls>
-            <source src="@/assets/헬스캐처_Final_MP4.mp4" type="video/mp4" />
+            <source src="@/assets/introVideo.mp4" type="video/mp4" />
             귀하의 브라우저는 비디오 태그를 지원하지 않습니다.
           </video>
         </div>
