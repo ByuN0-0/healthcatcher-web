@@ -110,6 +110,7 @@ export default {
   width: 100%;
   max-width: 1200px; /* 컨테이너 최대 너비 설정 */
   margin: 0 auto; /* 중앙 정렬 */
+  padding: 0;
 }
 
 .video-wrapper {
@@ -239,7 +240,7 @@ export default {
 @media screen and (max-width: 768px) {
   .intro-content {
     flex-direction: column;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .intro-video {
