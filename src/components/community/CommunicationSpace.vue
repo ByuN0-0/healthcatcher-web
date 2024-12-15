@@ -1,6 +1,6 @@
 <template>
   <div class="content-section">
-    <h2>소통 공간</h2>
+    <h2 class="section-title">소통 공간</h2>
     <div class="content-description">
       <p>"함께 나누는 건강 이야기, 헬스캐처와 함께 건강 목표를 실천하세요."</p>
       <p class="sub-text">건강을 해결하는 이야기를 나누는 공간입니다.</p>
@@ -27,9 +27,23 @@ export default {
 <style scoped>
 .content-section {
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 0 auto;
   text-align: center;
-  padding: 0 20px;
+  padding: 60px 20px;
+}
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px;
+}
+.content-description {
+  margin-bottom: 40px;
+}
+.sub-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
 }
 .button-group {
   display: flex;
@@ -53,15 +67,15 @@ export default {
   .content-section {
     margin: 30px auto;
   }
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
   .content-description {
-    font-size: 0.9em;
+    margin-bottom: 30px;
   }
-  .button-group {
-    gap: 10px;
-  }
-  .info-button {
-    padding: 8px 20px;
-    font-size: 0.9em;
+  .sub-text {
+    font-size: 13px;
   }
 }
 </style>

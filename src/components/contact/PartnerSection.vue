@@ -1,7 +1,7 @@
 <template>
   <section class="partner-section">
     <div class="title-container">
-      <h2>파트너십 문의</h2>
+      <h2 class="section-title">파트너십 문의</h2>
     </div>
     <div class="partner-content">
       <p>
@@ -31,41 +31,33 @@ export default {
 
 <style scoped>
 .partner-section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
-.icons-section {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 20px;
-}
-.icon-item p {
-  font-size: 1.2rem;
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
   color: #333;
 }
+
+.partner-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .partner-details {
   margin-top: 40px;
   font-size: 1.1rem;
   color: #555;
   line-height: 1.6;
 }
+
 .athlete-image {
   max-width: 100%;
   margin: 20px 0;
 }
-.partner-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-@media screen and (max-width: 768px) {
-  .partner-section {
-    padding: 20px 15px;
-  }
-  .partner-details {
-    font-size: 1rem;
-    margin-top: 20px;
-  }
-}
 </style>
+

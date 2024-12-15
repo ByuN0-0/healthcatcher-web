@@ -45,17 +45,22 @@ export default {
 /* 타이틀 컨테이너 */
 .title-container {
   text-align: center;
-  margin-top: 60px; /* 타이틀 위치 통일을 위한 여백 */
+  margin-top: 0;
   margin-bottom: 40px;
 }
+
 /* 운영진 소개 섹션 */
+.team-introduction {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
 .team-image {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 40px auto;
-  max-width: 1200px;
-  padding: 0 20px; /* 모바일에서 좌우 여백 추가 */
 }
 
 .team-image img {
@@ -64,10 +69,10 @@ export default {
   object-fit: cover;
 }
 
-.team-introduction .team-content {
+.team-content {
   margin-top: 20px;
   text-align: center;
-  padding: 0 20px; /* 모바일에서 텍스트 좌우 여백 추가 */
+  padding: 0 20px;
 }
 
 .team-content p {
@@ -78,23 +83,6 @@ export default {
 
 .team-content .highlight {
   color: #00a0e9;
-  /* font-weight: bold; */
-}
-
-/* 모바일 반응형 스타일 추가 */
-@media screen and (max-width: 768px) {
-  .team-content p {
-    font-size: 16px; /* 모바일에서 폰트 사이즈 축소 */
-  }
-
-  .title-container {
-    margin-top: 40px; /* 모바일에서 상단 여백 축소 */
-    margin-bottom: 30px;
-  }
-
-  .team-image {
-    margin: 30px auto; /* 모바일에서 상하 여백 축소 */
-  }
 }
 
 /* 추가된 section-title 스타일 */
@@ -103,5 +91,21 @@ export default {
   font-weight: bold;
   color: #333;
   margin-bottom: 50px;
+}
+
+/* 모바일 반응형 스타일 추가 */
+@media screen and (max-width: 768px) {
+  .team-content p {
+    font-size: 16px;
+  }
+
+  .title-container {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .team-image {
+    margin: 30px auto;
+  }
 }
 </style>

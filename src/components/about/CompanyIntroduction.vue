@@ -79,11 +79,23 @@ export default {
 </script>
 
 <style scoped>
-/* 타이틀 컨테이너 */
+.company-introduction {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px; /* HealthAppSection.vue와 동일한 패딩 */
+}
+
 .title-container {
   text-align: center;
-  margin-top: 60px; /* 타이틀 위치 통일을 위한 여백 */
+  margin-top: 0; /* 타이틀 위치를 HealthAppSection.vue와 동일하게 조정 */
   margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2.5rem; /* HealthAppSection.vue와 동일한 크기 */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px; /* 아래 여백 설정 */
 }
 
 /* 회사소개 섹션 */
@@ -290,13 +302,5 @@ export default {
   .intro-video {
     max-height: 250px;
   }
-}
-
-/* 추가된 section-title 스타일 */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 50px;
 }
 </style>

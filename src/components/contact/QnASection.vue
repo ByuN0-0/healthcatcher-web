@@ -77,8 +77,15 @@ export default {
 
 <style scoped>
 .qna-section {
-  padding: 20px;
+  padding: 60px 20px;
   text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #333;
 }
 
 .qna-content {
