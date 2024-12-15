@@ -105,7 +105,6 @@ export default {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
-  max-width: 800px; /* 최대 너비 설정 */
   margin: 0 auto; /* 중앙 정렬 */
 }
 
@@ -113,7 +112,6 @@ export default {
   width: 100%;
   display: block;
   object-fit: contain; /* cover에서 contain으로 변경 */
-  max-height: 450px; /* 최대 높이 설정 */
 }
 
 .text-content {
