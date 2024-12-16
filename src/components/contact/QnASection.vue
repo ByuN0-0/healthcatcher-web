@@ -4,7 +4,10 @@
       <h2 class="section-title">고객 Q&A</h2>
     </div>
     <div class="qna-content">
-      <p>"헬스캐처 서비스에 대한 궁금증을 해결해드립니다. FAQ에서 모든 정보를 빠르게 확인하세요."</p>
+      <p>
+        "헬스캐처 서비스에 대한 궁금증을 해결해드립니다. FAQ에서 모든 정보를
+        빠르게 확인하세요."
+      </p>
       <div class="qna-list posts-table">
         <table>
           <thead>
@@ -45,9 +48,21 @@ export default {
   data() {
     return {
       qnaList: [
-        { title: "헬스케어 서비스에 대한 궁금증은 어디서 해결할 수 있나요?", author: "헬스케어", date: "2024-01-01" },
-        { title: "헬스케어 서비스에 대한 궁금증은 어디서 해결할 수 있나요?", author: "헬스케어", date: "2024-01-01" },
-        { title: "헬스케어 서비스에 대한 궁금증은 어디서 해결할 수 있나요?", author: "헬스케어", date: "2024-01-01" },
+        {
+          title: "헬스케어 서비스에 대한 궁금증은 어디서 해결할 수 있나요?",
+          author: "헬스케어",
+          date: "2024-01-01",
+        },
+        {
+          title: "헬스케어 서비스에 대한 궁금증은 어디서 해결할 수 있나요?",
+          author: "헬스케어",
+          date: "2024-01-01",
+        },
+        {
+          title: "헬스케어 서비스에 대한 궁금증은 어디서 해결할 수 있나요?",
+          author: "헬스케어",
+          date: "2024-01-01",
+        },
         // ... 더 많은 QnA 데이터 추가
       ],
       currentPage: 1,
@@ -84,6 +99,7 @@ export default {
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
+  text-align: center;
   margin-bottom: 50px;
   color: #333;
 }
@@ -113,6 +129,10 @@ td {
 
 /* 모바일 반응형 스타일 추가 */
 @media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem; /* 모바일에서 크기 축소 */
+    margin-bottom: 30px; /* 모바일에서 여백 축소 */
+  }
   .posts-table {
     padding: 0 10px;
   }

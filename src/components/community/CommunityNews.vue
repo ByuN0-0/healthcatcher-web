@@ -30,8 +30,10 @@ export default {
 
 .section-title {
   font-size: 2.5rem;
-  color: #333;
+  font-weight: bold;
+  text-align: center;
   margin-bottom: 50px;
+  color: #333;
 }
 
 .content-description {

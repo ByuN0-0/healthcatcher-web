@@ -92,10 +92,11 @@ export default {
 }
 
 .section-title {
-  font-size: 2.5rem; /* HealthAppSection.vue와 동일한 크기 */
+  font-size: 2.5rem;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
   color: #333;
-  margin-bottom: 50px; /* 아래 여백 설정 */
 }
 
 /* 회사소개 섹션 */
@@ -238,6 +239,11 @@ export default {
 
 /* 반응형 스타일 */
 @media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
   .intro-content {
     flex-direction: column;
     padding: 0;

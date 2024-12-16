@@ -38,6 +38,7 @@ export default {
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
+  text-align: center;
   margin-bottom: 50px;
   color: #333;
 }
@@ -58,6 +59,13 @@ export default {
 .athlete-image {
   max-width: 100%;
   margin: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem; 
+    margin-bottom: 30px; 
+  }
 }
 </style>
 

@@ -89,12 +89,18 @@ export default {
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
+  text-align: center;
   margin-bottom: 50px;
+  color: #333;
 }
 
 /* 모바일 반응형 스타일 추가 */
 @media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
   .team-content p {
     font-size: 16px;
   }

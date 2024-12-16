@@ -169,7 +169,8 @@ export default {
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
   }
 
   .main-text h3 {

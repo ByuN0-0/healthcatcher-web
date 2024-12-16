@@ -174,9 +174,9 @@
     }
   
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
   
     .image-container {
       height: 250px;
