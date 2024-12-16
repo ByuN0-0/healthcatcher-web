@@ -129,6 +129,10 @@ td {
 
 /* 모바일 반응형 스타일 추가 */
 @media screen and (max-width: 768px) {
+  .qna-section {
+    padding: 40px 16px;
+  }
+
   .section-title {
     font-size: 1.8rem; /* 모바일에서 크기 축소 */
     margin-bottom: 30px; /* 모바일에서 여백 축소 */

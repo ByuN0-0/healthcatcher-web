@@ -96,18 +96,17 @@ export default {
 
 /* 모바일 반응형 스타일 추가 */
 @media screen and (max-width: 768px) {
+  .team-introduction {
+    padding: 40px 16px;  /* 패딩 축소 */
+  }
+
   .section-title {
     font-size: 1.8rem;
     margin-bottom: 30px;
   }
-  
+
   .team-content p {
     font-size: 16px;
-  }
-
-  .title-container {
-    margin-top: 40px;
-    margin-bottom: 30px;
   }
 
   .team-image {

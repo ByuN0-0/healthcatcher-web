@@ -48,8 +48,7 @@ export default {
 
 @media screen and (max-width: 768px) {
   .content-section {
-    margin: 30px auto;
-    padding: 60px 20px;
+    padding: 40px 16px;
   }
 
   .section-title {

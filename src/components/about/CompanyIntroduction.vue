@@ -239,6 +239,10 @@ export default {
 
 /* 반응형 스타일 */
 @media screen and (max-width: 768px) {
+  .company-introduction {
+    padding: 40px 16px;  /* 패딩 축소 */
+  }
+
   .section-title {
     font-size: 1.8rem;
     margin-bottom: 30px;

@@ -8,7 +8,8 @@
         헬스캐처와 함께 혁신적인 건강 솔루션을 만들어갈
         <span class="highlight">비즈니스 파트너</span>를 찾고 있습니다.
       </p>
-      <img style="height: auto;"
+      <img
+        style="height: auto"
         src="@/assets/partnershigoal.jpg"
         alt="운동 이미지"
         class="athlete-image"
@@ -63,9 +64,12 @@ export default {
 
 @media screen and (max-width: 768px) {
   .section-title {
-    font-size: 1.8rem; 
-    margin-bottom: 30px; 
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .partner-section {
+    padding: 40px 16px;
   }
 }
 </style>
-

@@ -66,7 +66,7 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .content-section {
-    margin: 30px auto;
+    padding: 40px 16px;  /* 패딩 축소 */
   }
   .section-title {
     font-size: 1.8rem;
