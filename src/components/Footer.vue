@@ -18,6 +18,10 @@
             <span class="label">본사</span>
             <span class="value">성북구 서경로 124, 16층 1618호 (정릉동, 유담관)</span>
           </p>
+          <p>
+            <span class="label">약관</span>
+            <router-link to="/policy/privacy" class="value privacy-policy-link">개인정보처리방침</router-link>
+          </p>
         </div>
       </div>
     </div>
@@ -58,7 +62,6 @@
     <!-- 카피라이트 -->
     <div class="copyright">
       <p>Copyright© 2024 헬스캐처. All Rights Reserved.</p>
-      <router-link to="/privacy-policy" class="privacy-policy-link">개인정보처리방침</router-link>
     </div>
   </footer>
 </template>
@@ -203,6 +206,30 @@ export default {
   }
 
   .ml-20 {
+    margin-left: 0;
+  }
+}
+
+/* 개인정보처리방침 링크 스타일 */
+.privacy-policy-link {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.privacy-policy-link:hover {
+  color: #00ffff;
+}
+
+/* 기존 info-details 스타일과 동일하게 적용 */
+.info-details .privacy-policy-link {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .info-details .privacy-policy-link {
+    display: block;
     margin-left: 0;
   }
 }

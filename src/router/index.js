@@ -13,7 +13,9 @@ import CommunityNews from '@/components/community/CommunityNews.vue'
 import CommunicationSpace from '@/components/community/CommunicationSpace.vue'
 import QnASection from '@/components/contact/QnASection.vue'
 import PartnerSection from '@/components/contact/PartnerSection.vue'
-import privacyPolicy from "@/pages/Privacy-Policy.vue";
+import privacyPolicy from "@/components/policy/Privacy-Policy.vue";
+import Policy from '@/pages/Policy.vue'
+import PrivacyPolicy from '@/components/policy/Privacy-Policy.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -116,6 +118,18 @@ const router = createRouter({
       path: '/privacy-policy',
       name: 'privacyPolicy',
       component: privacyPolicy,
+    },
+    {
+      path: '/policy',
+      name: 'Policy',
+      component: Policy,
+      children: [
+        {
+          path: 'privacy',
+          name: 'PrivacyPolicy',
+          component: PrivacyPolicy
+        }
+      ]
     }
   ],
   scrollBehavior() {
