@@ -58,6 +58,7 @@
     <!-- 카피라이트 -->
     <div class="copyright">
       <p>Copyright© 2024 헬스캐처. All Rights Reserved.</p>
+      <router-link to="/privacy-policy" class="privacy-policy-link">개인정보처리방침</router-link>
     </div>
   </footer>
 </template>
