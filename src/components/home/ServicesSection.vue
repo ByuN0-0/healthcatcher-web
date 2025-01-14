@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import healthApplicationBanner from '@/assets/healthapplicationbanner.jpg';
+import healthApplicationBanner from '@/assets/healthapplicationbanner.png';
 import healthCareProductsBanner from '@/assets/healthcareproductsbanner.jpg';
 import healthAdviceBanner from '@/assets/healthadvicebanner.jpg';
 

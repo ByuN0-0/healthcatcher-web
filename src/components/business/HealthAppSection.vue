@@ -7,7 +7,7 @@
     <div class="main-visual">
       <div class="image-container">
         <img
-          src="@/assets/healthapplications.jpg"
+          src="@/assets/healtholla.png"
           alt="건강 어플리케이션 이미지"
         />
       </div>
@@ -25,6 +25,24 @@
           건강을 관리할 수 있는 다양한 기능을 제공하여, 당신의 건강을 조금 더
           쉽게 관리할 수 있도록 도와드립니다.
         </p>
+      </div>
+    </div>
+
+    <!-- 앱 스크린샷 -->
+    <div class="app-screenshots">
+      <div class="screenshot-grid">
+        <div class="screenshot-item">
+          <img src="@/assets/screenshot1.png" alt="체험단 신청 화면" />
+        </div>
+        <div class="screenshot-item">
+          <img src="@/assets/screenshot2.png" alt="설문조사 화면" />
+        </div>
+        <div class="screenshot-item">
+          <img src="@/assets/screenshot3.png" alt="포인트 적립 화면" />
+        </div>
+        <div class="screenshot-item">
+          <img src="@/assets/screenshot4.png" alt="커뮤니티 화면" />
+        </div>
       </div>
     </div>
 
@@ -104,10 +122,10 @@
 
 .image-container img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover; /* 비율 유지하며 박스에 맞춰 조정 */
   border-radius: 12px;
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  margin-top: 80px;
 }
 
 .main-text {
@@ -137,6 +155,33 @@
 .highlight {
   color: #00a0e9;
   font-weight: bold;
+}
+
+/* 앱 스크린샷 스타일 */
+.app-screenshots {
+  margin-bottom: 60px;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.screenshot-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* 기능 블록 스타일 */
